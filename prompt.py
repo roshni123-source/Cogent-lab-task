@@ -11,8 +11,7 @@ os.environ["OPENAI_API_KEY"] = "sk-proj-Ir2mEo4OFYteUFwsdfXeT3BlbkFJBwoOV6Hgv1WL
 
 embeddings = OpenAIEmbeddings()
 
-loader = PyPDFLoader(
-    r"C:\Users\HP\OneDrive\Desktop\genai\crime-and-punishment.pdf")
+loader = PyPDFLoader(r"D:\Cogent-lab-task\crime-and-punishment.pdf")
 documents = loader.load()
 
 text_splitter = RecursiveCharacterTextSplitter(
