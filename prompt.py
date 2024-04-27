@@ -49,7 +49,7 @@ Answer:
 
 """
 
-model = ChatOpenAI(temperature=0.7, model="gpt-3.5-turbo")
+model = ChatOpenAI(temperature=0.9, model="gpt-3.5-turbo")
 prompt_template = PromptTemplate(input_variables=["history", "context", "question"],
                                  template=template)
 chain = RetrievalQA.from_chain_type(
