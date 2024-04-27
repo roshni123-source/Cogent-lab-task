@@ -1,6 +1,4 @@
-# from pinecone import Pinecone
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-# from langchain_pinecone import PineconeVectorStore
 from langchain_community.vectorstores.faiss import FAISS
 import os
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
@@ -12,10 +10,6 @@ from langchain_community.document_loaders import PyPDFLoader
 # load_dotenv('var.env')
 
 os.environ["OPENAI_API_KEY"] = "sk-proj-Ir2mEo4OFYteUFwsdfXeT3BlbkFJBwoOV6Hgv1WLGjTSy2kA"
-# PINECONE_API_KEY = "f3a59594-498c-4f56-9f7a-01f0d748d349"
-
-# INDEX_NAME = "pineconebot"
-
 filePath = r"C:\Users\HP\OneDrive\Desktop\genai\crime-and-punishment.pdf"
 loader = PyPDFLoader(filePath)
 documents = loader.load()
@@ -26,11 +20,7 @@ text_splitter = RecursiveCharacterTextSplitter(
 docs = text_splitter.split_documents(documents)
 embeddings = OpenAIEmbeddings()
 vectorstore = FAISS.from_documents(docs, embeddings)   
-# Pinecone(api_key=PINECONE_API_KEY,
-#          environment='gcp-starter')
 
-# vectbd = PineconeVectorStore.from_documents(
-#     docs, embeddings, index_name=INDEX_NAME)
 retriever = vectorstore.as_retriever()
 
 llm = ChatOpenAI(model="gpt-4-turbo", temperature=0.2)
