@@ -7,7 +7,7 @@ from langchain_community.document_loaders import CSVLoader
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 import os
 
-os.environ["OPENAI_API_KEY"] = "sk-proj-Ir2mEo4OFYteUFwsdfXeT3BlbkFJBwoOV6Hgv1WLGjTSy2kA"
+os.environ["OPENAI_API_KEY"]="Your_api_key"
 
 embeddings = OpenAIEmbeddings()
 

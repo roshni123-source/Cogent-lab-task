@@ -9,7 +9,7 @@ from langchain_community.document_loaders import PyPDFLoader
 
 # load_dotenv('var.env')
 
-os.environ["OPENAI_API_KEY"] = "sk-proj-Ir2mEo4OFYteUFwsdfXeT3BlbkFJBwoOV6Hgv1WLGjTSy2kA"
+os.environ["OPENAI_API_KEY"] = "Your_api_key"
 filePath = r"C:\Users\HP\OneDrive\Desktop\genai\crime-and-punishment.pdf"
 loader = PyPDFLoader(filePath)
 documents = loader.load()
