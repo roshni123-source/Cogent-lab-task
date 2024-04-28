@@ -28,7 +28,7 @@ llm = ChatOpenAI(model="gpt-4-turbo", temperature=0.2)
 template = """
 INSTRUCTIONS:
 Write a concise summary of the following content 
-summary should be maximum 20 pages.
+
 <ctx>
 {context}
 </ctx>

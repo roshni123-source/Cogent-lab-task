@@ -3,7 +3,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.chains import RetrievalQA
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts.prompt import PromptTemplate
-from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import CSVLoader
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 import os
 
@@ -11,7 +11,7 @@ os.environ["OPENAI_API_KEY"] = "sk-proj-Ir2mEo4OFYteUFwsdfXeT3BlbkFJBwoOV6Hgv1WL
 
 embeddings = OpenAIEmbeddings()
 
-loader = PyPDFLoader(r"D:\Cogent-lab-task\crime-and-punishment.pdf")
+loader = CSVLoader(r"D:\Cogent-lab-task\data (1).csv")
 documents = loader.load()
 
 text_splitter = RecursiveCharacterTextSplitter(
@@ -49,7 +49,7 @@ Answer:
 
 """
 
-model = ChatOpenAI(temperature=0.9, model="gpt-3.5-turbo")
+model = ChatOpenAI(temperature=0.7, model="gpt-3.5-turbo")
 prompt_template = PromptTemplate(input_variables=["history", "context", "question"],
                                  template=template)
 chain = RetrievalQA.from_chain_type(
